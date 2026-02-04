@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>IurisLab · Análisis Jurisprudencial</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <!-- CABECERA SUPERIOR -->
+    <header class="site-header">
+        <h1 class="logo">IurisLab</h1>
+        <p class="tagline">
+            Sistema de apoyo al análisis y sistematización de jurisprudencia del CENDOJ
+        </p>
+    </header>
+
+    <!-- CONTENEDOR BLANCO -->
+    <div class="container">
+
+        <!-- FORMULARIO -->
+        <form action="/analizar" method="post" enctype="multipart/form-data">
+
+            <label for="archivo">Sube una sentencia (PDF):</label>
+            <input type="file" name="archivo" id="archivo" required>
+
+            <label for="tipo_analisis">Tipo de análisis jurídico:</label>
+            <select name="tipo_analisis" id="tipo_analisis" required>
+                <option value="" disabled selected>Selecciona una opción</option>
+                <option value="sujetos">Sujetos intervinientes</option>
+                <option value="ratio">Ratio decidendi</option>
+                <option value="normativa">Normativa aplicada</option>
+                <option value="fallo">Fallo</option>
+                <option value="consecuencia">Consecuencia jurídica</option>
+                <option value="otro">Otra cuestión jurídica o fáctica</option>
+            </select>
+
+            <!-- CAMPO PARA MODO ABIERTO -->
+            <label for="pregunta">
+                Especifica la cuestión (solo si seleccionas “Otra cuestión”):
+            </label>
+            <textarea
+                name="pregunta"
+                id="pregunta"
+                placeholder="Ej. ¿Qué edad tenía la víctima según los hechos probados?"
+            ></textarea>
+
+            <button type="submit">Analizar</button>
+        </form>
+
+        <!-- RESULTADO -->
+        {% if resultado %}
+        <div class="resultado">
+            <h2>Resultado del análisis</h2>
+            <div class="resultado-texto">
+                {{ resultado | safe }}
+            </div>
+        </div>
+        {% endif %}
+
+        <hr class="separator">
+
+        <!-- AVISO LEGAL -->
+        <div class="legal">
+            <h3>Aviso legal</h3>
+
+            <p>
+                Esta aplicación constituye un <strong>prototipo experimental</strong>
+                desarrollado con fines académicos.
+            </p>
+
+            <p>
+                El contenido generado tiene carácter meramente informativo y
+                <strong>no sustituye</strong> la labor de jueces, magistrados,
+                abogados u otros operadores jurídicos.
+            </p>
+
+            <p>
+                Los documentos analizados se procesan exclusivamente para la
+                generación de la respuesta solicitada y no se almacenan de forma permanente.
+            </p>
+
+            <p>
+                De conformidad con el Reglamento (UE) 2016/679 (RGPD) y el marco normativo europeo
+                en materia de inteligencia artificial, el sistema no almacena datos personales
+                ni genera perfiles automatizados, limitándose a un análisis puntual de los
+                documentos proporcionados por el usuario.
+            </p>
+
+            <p>
+                La herramienta actúa como un sistema de <strong>asistencia jurídica</strong>,
+                permaneciendo siempre bajo supervisión humana.
+            </p>
+
+            <p>
+                Las respuestas generadas no constituyen dictamen jurídico ni resolución judicial,
+                debiendo ser interpretadas como una ayuda a la comprensión y sistematización
+                de la jurisprudencia.
+            </p>
+        </div>
+
+    </div>
+
+</body>
+</html>

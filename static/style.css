@@ -1,0 +1,179 @@
+/* =========================
+   FONDO GENERAL
+   ========================= */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+
+    background-image: 
+        linear-gradient(
+            rgba(244, 246, 248, 0.65),
+            rgba(244, 246, 248, 0.65)
+        ),
+        url("/static/fondolexjuris.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+/* =========================
+   CABECERA (FUERA DEL BLOQUE BLANCO)
+   ========================= */
+
+.site-header {
+    width: 100%;
+    text-align: center;
+    padding: 90px 20px 50px;
+}
+
+.logo {
+    margin: 0;
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    color: #1f2937;
+}
+
+.tagline {
+    margin-top: 18px;
+    font-size: 1.1rem;
+    color: #374151;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   BLOQUE BLANCO CENTRAL
+   ========================= */
+
+.container {
+    width: 70%;
+    max-width: 1000px;
+    margin: 0 auto 70px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 45px 50px;
+    border-radius: 14px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================
+   FORMULARIO
+   ========================= */
+
+label {
+    display: block;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #1f2937;
+}
+
+input,
+textarea {
+    width: 100%;
+    margin: 10px 0 25px;
+    padding: 12px;
+    font-size: 0.95rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+button {
+    background-color: #1f2937;
+    color: white;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+
+button:hover {
+    background-color: #111827;
+}
+
+
+/* =========================
+   RESULTADO DEL ANÁLISIS
+   ========================= */
+
+.resultado {
+    margin: 50px auto 0;
+    background: #eef2f5;
+    padding: 35px 40px;
+    border-radius: 10px;
+    max-width: 900px;
+
+    line-height: 1.7;
+    font-size: 0.95rem;
+    color: #1f2937;
+}
+
+.resultado h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    color: #111827;
+    text-align: left;
+}
+
+.resultado pre {
+    margin: 0;
+    white-space: pre-wrap;
+    font-family: inherit;
+}
+
+
+/* =========================
+   SEPARADOR
+   ========================= */
+
+.separator {
+    margin: 55px 0;
+    border: none;
+    border-top: 1px solid #d1d5db;
+}
+
+
+/* =========================
+   AVISO LEGAL
+   ========================= */
+
+.legal {
+    background-color: #f9fafb;
+    padding: 30px 35px;
+    border-left: 4px solid #1f2937;
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: #374151;
+    text-align: justify;
+}
+
+.legal h3 {
+    margin-top: 0;
+    margin-bottom: 18px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #111827;
+}
+
+.legal p {
+    margin-bottom: 12px;
+}
